@@ -121,5 +121,6 @@ endfunction
 function! diff_fold#UpdateDiffFolds()
     if ! exists('b:diff_fold_update') || b:changedtick != b:diff_fold_update
         call diff_fold#ProcessBuffer()
+        set foldlevel=2 | set foldcolumn=3 | set norelativenumber
     endif
 endfunction
